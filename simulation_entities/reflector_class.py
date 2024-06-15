@@ -2,7 +2,7 @@ import pygame
 from simulation_entities.angles_class import Angles
 
 pygame.font.init()
-font = pygame.font.SysFont('Comic Sans MS', 14)
+font = pygame.font.SysFont('Comic Sans MS', 8)
 
 class ReflectorSimulation:
     def __init__(self, axis_pos: tuple[int, int]) -> None:
@@ -26,6 +26,6 @@ class ReflectorSimulation:
         pygame.draw.line(screen, 'black', start, end, 4)
 
         # Angle Display
-        text_pos = (self.axis_pos[0] - 10, self.axis_pos[1] + 26)
-        pygame.draw.rect(screen, (220, 220, 220), (text_pos[0] - 10, text_pos[1], 40, 20))
+        text_pos = (self.axis_pos[0] - 20, self.axis_pos[1] + 5)
+        pygame.draw.rect(screen, (220, 220, 220), (text_pos[0], text_pos[1], 10, 5))
         screen.blit(font.render(str(int(self.mirror_angles.y)) + '°', 0, '#111111'), text_pos)
